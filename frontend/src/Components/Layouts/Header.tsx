@@ -50,7 +50,7 @@ export default function Header() {
           to="/"
           className="flex items-center space-x-3 rtl:space-x-reverse"
         >
-          <span className="text-blue-400 text-lg font-bold">EventMgr</span>
+          <span className="text-blue-500 text-xl font-bold">EventMgr</span>
         </Link>
         <button
           onClick={openMenu}
