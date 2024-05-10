@@ -8,8 +8,8 @@ export default function RootLayout({ children }: MainLayoutProps) {
   return (
     <main className="flex flex-col w-full h-full">
       <Header />
-      <section className="flex flex-col p-6 bg-hero w-screen h-screen">
-        {children}
+      <section className="flex flex-col pt-[5%] bg-hero w-screen h-screen items-center"> 
+        {children} 
       </section>
     </main>
   );
