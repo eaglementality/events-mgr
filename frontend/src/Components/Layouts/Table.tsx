@@ -1,16 +1,20 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import { FormSkeleton } from './FormSkeleton'
 
 interface TableProps {
     headers: any,
     data: any,
     editUrl: string,
     deleteHandler: (e: number) => void,
-    createClick: () => void
+    createClick: () => void,
+    isLoading?: boolean,
+    rows?:number,
+    cols?:number
 }
-export default function Table({ headers, data, editUrl, deleteHandler,createClick} : TableProps) { 
+export default function Table({ headers, data, editUrl, deleteHandler,createClick, isLoading, rows, cols} : TableProps) { 
   return (
-    <div className="relative overflow-x-auto shadow-md sm:rounded-lg inline-block">
+    <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
         <div className='bg-white p-2 text-right'>
         <button
         type="button" onClick={createClick}
@@ -32,6 +36,9 @@ export default function Table({ headers, data, editUrl, deleteHandler,createClic
                 }
             </tr>
         </thead>
+            {isLoading && 
+                <FormSkeleton rows={rows}  cols={cols}/>
+            }
         <tbody>
             {
                 data.map((row: any) => {
