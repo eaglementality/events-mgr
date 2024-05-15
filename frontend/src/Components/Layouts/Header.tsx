@@ -45,7 +45,7 @@ export default function Header() {
         onClick={hideDropDown}
         className="absolute hidden h-screen w-screen z-10"
       ></div>
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <div className="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto p-4">
         <Link
           to="/"
           className="flex items-center space-x-3 rtl:space-x-reverse"
