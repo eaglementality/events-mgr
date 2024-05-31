@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react"
-import { Events, modifyEvent } from "../data"
+import { useEffect, useState } from "react" 
 import RootLayout from "./MainLayout"
 import { useNavigate } from "react-router-dom"
 import { AxiosGet, AxiosPut } from "../Components/crud"
 import Card from "../Components/Layouts/Card"
+import Skeleton from "react-loading-skeleton"
+import CardSkeleton from "../Components/Layouts/CardSkeleton"
 
 interface EventStates {
     lastName: string,
@@ -19,7 +20,7 @@ const Dashboard = () => {
         lastName: user.lastName || '',
         events: []
     });
-
+    const [loading, setLoading] = useState(true);
     // const cardData = [
     //   {
     //     id: 0,
@@ -57,6 +58,7 @@ const Dashboard = () => {
                 }); 
                 if (eventsRes.length > 0) {
                   updateStates("events", eventsRes); 
+                  setLoading(false);
                 }else{
                   throw new Error("Something went wrong!");
                 }
@@ -96,7 +98,11 @@ const Dashboard = () => {
     }
   return (
     <RootLayout>
-    <div className="mt-10 flex flex-wrap justify-center space-x-5 gap-y-5">{
+      {loading && 
+      <CardSkeleton cards={10} />
+      }
+    <div className="w-4/5 flex flex-wrap justify-center gap-5">
+      {
         states.events.map((card: any) => {
             return( 
             <Card isAttendee={isAttendee(card.attendants)} btnTitle="Join" key={card.id} title={card.name} date={card.datetime} description={card.description} btnClick={() => addToAttendees(card)}/>

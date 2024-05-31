@@ -12,7 +12,7 @@ interface CardProps {
 export default function Card({title, description, btnTitle, btnClick,date, isAttendee}: CardProps) {
   return (
     <div
-  className="block rounded-lg bg-slate-100 p-6 text-surface shadow-secondary-1 w-72">
+  className="block rounded-lg bg-white p-6 text-surface shadow-secondary-1 w-72">
   <h5 className="mb-2 text-xl font-medium leading-tight">{ title}</h5>
   <p className="mb-4 text-base text-sm">
     { description}

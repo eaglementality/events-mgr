@@ -16,6 +16,7 @@ function Events() {
   const [states, setStates] = React.useState<EventStates>({
     events: [],
   });
+  const [isLoading, setIsLoading] = useState(true);
 
   const [showModel, setShowModel] = useState<boolean>(false);
   const [selectedEvent, setSelectedEvent] = useState<number | null>(null);
@@ -89,6 +90,7 @@ function Events() {
         });
         if (eventsRes.length > 0) {
           updateStates("events", eventsRes);
+          setIsLoading(false);
         } else {
           throw new Error("Something went wrong!");
         }
@@ -117,8 +119,8 @@ function Events() {
             onCancel={()=> setShowModel(false)} 
             onOk={deleteEvent}
         />
-        <div className='w-4/5 text-center'>
-            <Table createClick={createClick} editUrl="/events" deleteHandler={handleDelete} headers={headers} data={states.events.filter((event : any) => {
+        <div className='w-3/5 text-center'>
+            <Table isLoading={isLoading} rows={10} cols={5} createClick={createClick} editUrl="/events" deleteHandler={handleDelete} headers={headers} data={states.events.filter((event : any) => {
                 delete event.createdby;
                 event.datetime = dayjs(event.datetime).format("DD MMM YYYY");
                 return event;
