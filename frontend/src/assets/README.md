@@ -1,4 +1,4 @@
-## About FacultyMIS
+## About EventsMgr
 
 EventsMgr is a events plannng app, to manage and organize your events
 
