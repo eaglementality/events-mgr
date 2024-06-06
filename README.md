@@ -44,7 +44,8 @@ To run the frontend, navigate to the frontend folder and run:
 You can log into the admin dashboard with these credentials
 
 Email: admin@eventsmgr.com
-Password: Admin123
+
+Password: P@ssw0rd
 
 
 ### Usage
