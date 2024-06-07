@@ -7,7 +7,7 @@ export const HeaderSection = () => {
       <img src={cheer} alt="logo" className="w-screen h-screen" />
       <header className="absolute z-50 inset-0 top-0 bg-black opacity-80">
         <nav className="flex justify-between w-full px-48 py-6">
-          <img src={logo} alt="logo" className="w-[8%]  " />
+          <img src={logo} alt="logo" className="w-[10%] -mt-4 " />
           <div className="flex space-x-12 mt-10">
             <ul className="text-white flex space-x-10">
               <li>{`Schedule`}</li>
