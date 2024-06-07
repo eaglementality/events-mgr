@@ -18,7 +18,6 @@ export const HeaderSection = () => {
             <button className=" w-[101px] h-[41px] -mt-[8.5px] text-white border-[1.5px] border-white rounded-l-full rounded-r-full">{`Login`}</button>
           </div>
         </nav>
-        
       </header>
     </main>
   );
