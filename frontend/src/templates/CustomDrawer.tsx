@@ -7,7 +7,7 @@ interface  DrawerProp {
     content?: React.ReactNode|undefined;
     DrawerStyle?:string;
 }
-export function CustomDrawer({isOpen,title,titleIcon,content, DrawerStyle}:DrawerProp) {
+export function CustomDrawer({isOpen,DrawerStyle}:DrawerProp) {
 
 
   return (
